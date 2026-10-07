@@ -223,17 +223,17 @@ public class RockPaperScissorsFrame extends JFrame
         if (playerMove.equals(computerMove))
         {
             ties++;
-            result = getName(playerMove) + " vs " + getName(computerMove) + " (Tie!";
+            result = getName(playerMove) + " ties " + getName(computerMove).toLowerCase() + ". (Tie!";
         }
         else if (beats(playerMove, computerMove))
         {
             playerWins++;
-            result = getWinText(playerMove) + " (Player wins!";
+            result = getWinText(playerMove) + ". (Player wins!";
         }
         else
         {
             computerWins++;
-            result = getWinText(computerMove) + " (Computer wins!";
+            result = getWinText(computerMove) + ". (Computer wins!";
         }
         resultsArea.append(result + " Computer: " + strategyName + ")\n");
 
@@ -305,18 +305,18 @@ public class RockPaperScissorsFrame extends JFrame
      * Gets the text for a win by the given move.
      *
      * @param winningMove the move that won
-     * @return text such as "Rock breaks Scissors"
+     * @return text such as "Rock breaks scissors"
      */
     private String getWinText(String winningMove)
     {
         switch (winningMove)
         {
             case "R":
-                return "Rock breaks Scissors";
+                return "Rock breaks scissors";
             case "P":
-                return "Paper covers Rock";
+                return "Paper covers rock";
             default:
-                return "Scissors cut Paper";
+                return "Scissors cut paper";
         }
     }
 
